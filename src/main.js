@@ -1,4 +1,3 @@
-import './styles.css';
 import { CanvasRenderer } from './render/canvasRenderer.js';
 import { SceneManager } from './engine/sceneManager.js';
 import { RafLoop } from './engine/loop.js';
