@@ -21,6 +21,8 @@ Then open http://localhost:5173.
 
 ## Long-running performance notes
 
+- Character and particle counts are bounded by complexity presets.
+- Each scene includes 20 additional characters for richer visuals while still keeping capped totals.
 - Object counts are bounded by complexity presets (low/med/high).
 - Particle allocation uses a fixed-size pool to avoid frequent garbage allocations.
 - Frame delta time is clamped to 33ms in the RAF loop.

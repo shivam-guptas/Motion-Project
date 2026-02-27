@@ -3,15 +3,14 @@ import { ParticlePool } from '../entities/particle.js';
 import { createUnderwaterScene } from '../scenes/underwater.js';
 import { createSpaceScene } from '../scenes/space.js';
 import { createCandylandScene } from '../scenes/candyland.js';
+import { createExtraScenes } from '../scenes/extraScenes.js';
 import { updateCharacter } from '../entities/character.js';
 
 const COMPLEXITY = {
-  low: { characters: 5, particles: 80 },
-  med: { characters: 8, particles: 140 },
-  high: { characters: 12, particles: 220 }
+  low: { characters: 3, particles: 90 },
+  med: { characters: 6, particles: 160 },
+  high: { characters: 10, particles: 260 }
 };
-
-const SCENE_FACTORIES = [createUnderwaterScene, createSpaceScene, createCandylandScene];
 
 export class SceneManager {
   constructor(boundsProvider) {
@@ -25,7 +24,21 @@ export class SceneManager {
     this.particlePool = new ParticlePool(COMPLEXITY[this.complexityKey].particles);
     this.fpsSamples = [];
     this.avgFps = 60;
-    this.switchScene();
+    this.rng = createRng(this.seed);
+    this.sceneBank = [];
+    this.rebuildSceneBank();
+    this.switchScene(0);
+  }
+
+  rebuildSceneBank() {
+    const bounds = this.boundsProvider();
+    const complexity = this.complexity;
+    this.sceneBank = [
+      createUnderwaterScene({ rng: this.rng, bounds, complexity }),
+      createSpaceScene({ rng: this.rng, bounds, complexity }),
+      createCandylandScene({ rng: this.rng, bounds, complexity }),
+      ...createExtraScenes({ rng: this.rng, bounds, complexity })
+    ];
   }
 
   get complexity() {
@@ -35,6 +48,7 @@ export class SceneManager {
   setComplexity(key) {
     this.complexityKey = key;
     this.particlePool.resize(this.complexity.particles);
+    this.reseed(this.seed);
     this.switchScene(this.currentFactoryIndex);
   }
 
@@ -50,15 +64,16 @@ export class SceneManager {
     this.avgFps = this.fpsSamples.reduce((a, b) => a + b, 0) / this.fpsSamples.length;
   }
 
-  switchScene(index = (this.currentFactoryIndex + 1) % SCENE_FACTORIES.length) {
+  reseed(seed) {
+    this.seed = seed >>> 0;
+    this.rng = createRng(this.seed);
+    this.rebuildSceneBank();
+  }
+
+  switchScene(index = (this.currentFactoryIndex + 1) % this.sceneBank.length) {
     this.currentFactoryIndex = index;
-    this.seed = (this.seed + 2654435761) >>> 0;
-    const rng = createRng(this.seed);
-    this.scene = SCENE_FACTORIES[this.currentFactoryIndex]({
-      rng,
-      bounds: this.boundsProvider(),
-      complexity: this.complexity
-    });
+    this.reseed((this.seed + 2654435761) >>> 0);
+    this.scene = this.sceneBank[this.currentFactoryIndex];
     this.sceneAge = 0;
     this.particlePool.reset();
   }
@@ -71,17 +86,17 @@ export class SceneManager {
 
   spawnParticles(dt) {
     const bounds = this.boundsProvider();
-    const spawnCount = Math.min(5, Math.ceil(this.scene.spawnRate * dt));
+    const spawnCount = Math.min(8, Math.ceil(this.scene.spawnRate * dt));
     for (let i = 0; i < spawnCount; i += 1) {
       if (this.particlePool.activeCount() >= this.scene.particlesTarget) break;
       this.particlePool.spawn({
-        x: Math.random() * bounds.width,
-        y: bounds.height + Math.random() * 30,
-        vx: (Math.random() - 0.5) * 8,
-        vy: -20 - Math.random() * 30,
-        size: 2 + Math.random() * 6,
-        alpha: 0.45 + Math.random() * 0.4,
-        color: this.scene.characters[Math.floor(Math.random() * this.scene.characters.length)]?.hue || '#fff'
+        x: this.rng.range(0, bounds.width),
+        y: bounds.height + this.rng.range(0, 30),
+        vx: this.rng.range(-6, 6),
+        vy: this.rng.range(-54, -20),
+        size: this.rng.range(2, 8),
+        alpha: this.rng.range(0.45, 0.85),
+        color: this.scene.characters[this.rng.int(0, this.scene.characters.length - 1)]?.hue || '#fff'
       });
     }
   }
@@ -119,7 +134,9 @@ export class SceneManager {
       particleCount: this.particlePool.activeCount(),
       avgFps: this.avgFps.toFixed(1),
       seed: this.seed,
-      complexity: this.complexityKey
+      complexity: this.complexityKey,
+      sceneIndex: this.currentFactoryIndex + 1,
+      sceneTotal: this.sceneBank.length
     };
   }
 }

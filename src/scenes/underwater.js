@@ -1,17 +1,19 @@
 import { createCharacter } from '../entities/character.js';
 
 export const createUnderwaterScene = ({ rng, bounds, complexity }) => {
-  const characterCount = complexity.characters;
-  const particlesTarget = complexity.particles;
-  const characters = Array.from({ length: characterCount }, (_, i) => createCharacter(rng, bounds, {
-    accent: ['#96f2d7', '#7ec8e3', '#ffc8dd', '#ffdf91', '#d0f4de']
-  }, i));
+  const colors = ['#00bbf9', '#00f5d4', '#9b5de5', '#f15bb5', '#fee440', '#8ac926'];
+  const characters = Array.from({ length: complexity.characters + 20 }, (_, i) =>
+    createCharacter(rng, bounds, { accent: colors }, i)
+  );
 
   return {
     name: 'Underwater',
     particleStyle: 'bubbles',
     characters,
-    particlesTarget,
-    spawnRate: 8
+    particlesTarget: complexity.particles,
+    spawnRate: 8,
+    backgroundTop: '#43c6ff',
+    backgroundBottom: '#0061a8',
+    accents: colors
   };
 };
