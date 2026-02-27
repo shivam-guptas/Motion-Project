@@ -3,6 +3,7 @@ import { ParticlePool } from '../entities/particle.js';
 import { createUnderwaterScene } from '../scenes/underwater.js';
 import { createSpaceScene } from '../scenes/space.js';
 import { createCandylandScene } from '../scenes/candyland.js';
+import { createExtraSceneFactories } from '../scenes/extraScenes.js';
 import { updateCharacter } from '../entities/character.js';
 
 const COMPLEXITY = {
@@ -11,7 +12,12 @@ const COMPLEXITY = {
   high: { characters: 12, particles: 220 }
 };
 
-const SCENE_FACTORIES = [createUnderwaterScene, createSpaceScene, createCandylandScene];
+const SCENE_FACTORIES = [
+  createUnderwaterScene,
+  createSpaceScene,
+  createCandylandScene,
+  ...createExtraSceneFactories()
+];
 
 export class SceneManager {
   constructor(boundsProvider) {
@@ -107,7 +113,7 @@ export class SceneManager {
     if (this.resetAge >= 360) this.hardReset();
 
     const bounds = this.boundsProvider();
-    for (const char of this.scene.characters) updateCharacter(char, elapsed, bounds);
+    for (const char of this.scene.characters) updateCharacter(char, elapsed, bounds, dt);
     this.spawnParticles(dt);
     this.updateParticles(dt);
   }

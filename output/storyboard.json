@@ -1,0 +1,312 @@
+{
+  "title": "Happy Parade",
+  "theme": "animals",
+  "targetAge": "2-5",
+  "durationSec": 60,
+  "complexity": "med",
+  "bpm": 106,
+  "sections": [
+    {
+      "type": "chorus",
+      "lines": [
+        "bunny bounce, bunny bounce!",
+        "red and blue, sing and clap!"
+      ],
+      "repeat": 2
+    },
+    {
+      "type": "verse",
+      "lines": [
+        "Little puppy goes hop_right in the sun,",
+        "kitty and duck join the fun!"
+      ],
+      "repeat": 1
+    }
+  ],
+  "scenes": [
+    {
+      "t": 0,
+      "dur": 3,
+      "bg": "aurorazoo",
+      "chars": [
+        {
+          "id": "bunny",
+          "x": 0.25,
+          "y": 0.72,
+          "action": "bounce"
+        }
+      ],
+      "caption": "bunny bounce, bunny bounce!"
+    },
+    {
+      "t": 3,
+      "dur": 3,
+      "bg": "glowgarden",
+      "chars": [
+        {
+          "id": "dog",
+          "x": 0.45,
+          "y": 0.72,
+          "action": "hop_right"
+        }
+      ],
+      "caption": "red and blue, sing and clap!"
+    },
+    {
+      "t": 6,
+      "dur": 3,
+      "bg": "magicmeadow",
+      "chars": [
+        {
+          "id": "dino",
+          "x": 0.65,
+          "y": 0.72,
+          "action": "wave"
+        }
+      ],
+      "caption": "Little puppy goes hop_right in the sun,"
+    },
+    {
+      "t": 9,
+      "dur": 3,
+      "bg": "bubblecity",
+      "chars": [
+        {
+          "id": "fish",
+          "x": 0.25,
+          "y": 0.72,
+          "action": "spin"
+        }
+      ],
+      "caption": "kitty and duck join the fun!"
+    },
+    {
+      "t": 12,
+      "dur": 3,
+      "bg": "aurorazoo",
+      "chars": [
+        {
+          "id": "bunny",
+          "x": 0.45,
+          "y": 0.72,
+          "action": "clap"
+        }
+      ],
+      "caption": "bunny bounce, bunny bounce!"
+    },
+    {
+      "t": 15,
+      "dur": 3,
+      "bg": "glowgarden",
+      "chars": [
+        {
+          "id": "dog",
+          "x": 0.65,
+          "y": 0.72,
+          "action": "march"
+        }
+      ],
+      "caption": "red and blue, sing and clap!"
+    },
+    {
+      "t": 18,
+      "dur": 3,
+      "bg": "magicmeadow",
+      "chars": [
+        {
+          "id": "dino",
+          "x": 0.25,
+          "y": 0.72,
+          "action": "bounce"
+        }
+      ],
+      "caption": "Little puppy goes hop_right in the sun,"
+    },
+    {
+      "t": 21,
+      "dur": 3,
+      "bg": "bubblecity",
+      "chars": [
+        {
+          "id": "fish",
+          "x": 0.45,
+          "y": 0.72,
+          "action": "hop_right"
+        }
+      ],
+      "caption": "kitty and duck join the fun!"
+    },
+    {
+      "t": 24,
+      "dur": 3,
+      "bg": "aurorazoo",
+      "chars": [
+        {
+          "id": "bunny",
+          "x": 0.65,
+          "y": 0.72,
+          "action": "wave"
+        }
+      ],
+      "caption": "bunny bounce, bunny bounce!"
+    },
+    {
+      "t": 27,
+      "dur": 3,
+      "bg": "glowgarden",
+      "chars": [
+        {
+          "id": "dog",
+          "x": 0.25,
+          "y": 0.72,
+          "action": "spin"
+        }
+      ],
+      "caption": "red and blue, sing and clap!"
+    },
+    {
+      "t": 30,
+      "dur": 3,
+      "bg": "magicmeadow",
+      "chars": [
+        {
+          "id": "dino",
+          "x": 0.45,
+          "y": 0.72,
+          "action": "clap"
+        }
+      ],
+      "caption": "Little puppy goes hop_right in the sun,"
+    },
+    {
+      "t": 33,
+      "dur": 3,
+      "bg": "bubblecity",
+      "chars": [
+        {
+          "id": "fish",
+          "x": 0.65,
+          "y": 0.72,
+          "action": "march"
+        }
+      ],
+      "caption": "kitty and duck join the fun!"
+    },
+    {
+      "t": 36,
+      "dur": 3,
+      "bg": "aurorazoo",
+      "chars": [
+        {
+          "id": "bunny",
+          "x": 0.25,
+          "y": 0.72,
+          "action": "bounce"
+        }
+      ],
+      "caption": "bunny bounce, bunny bounce!"
+    },
+    {
+      "t": 39,
+      "dur": 3,
+      "bg": "glowgarden",
+      "chars": [
+        {
+          "id": "dog",
+          "x": 0.45,
+          "y": 0.72,
+          "action": "hop_right"
+        }
+      ],
+      "caption": "red and blue, sing and clap!"
+    },
+    {
+      "t": 42,
+      "dur": 3,
+      "bg": "magicmeadow",
+      "chars": [
+        {
+          "id": "dino",
+          "x": 0.65,
+          "y": 0.72,
+          "action": "wave"
+        }
+      ],
+      "caption": "Little puppy goes hop_right in the sun,"
+    },
+    {
+      "t": 45,
+      "dur": 3,
+      "bg": "bubblecity",
+      "chars": [
+        {
+          "id": "fish",
+          "x": 0.25,
+          "y": 0.72,
+          "action": "spin"
+        }
+      ],
+      "caption": "kitty and duck join the fun!"
+    },
+    {
+      "t": 48,
+      "dur": 3,
+      "bg": "aurorazoo",
+      "chars": [
+        {
+          "id": "bunny",
+          "x": 0.45,
+          "y": 0.72,
+          "action": "clap"
+        }
+      ],
+      "caption": "bunny bounce, bunny bounce!"
+    },
+    {
+      "t": 51,
+      "dur": 3,
+      "bg": "glowgarden",
+      "chars": [
+        {
+          "id": "dog",
+          "x": 0.65,
+          "y": 0.72,
+          "action": "march"
+        }
+      ],
+      "caption": "red and blue, sing and clap!"
+    },
+    {
+      "t": 54,
+      "dur": 3,
+      "bg": "magicmeadow",
+      "chars": [
+        {
+          "id": "dino",
+          "x": 0.25,
+          "y": 0.72,
+          "action": "bounce"
+        }
+      ],
+      "caption": "Little puppy goes hop_right in the sun,"
+    },
+    {
+      "t": 57,
+      "dur": 3,
+      "bg": "bubblecity",
+      "chars": [
+        {
+          "id": "fish",
+          "x": 0.45,
+          "y": 0.72,
+          "action": "hop_right"
+        }
+      ],
+      "caption": "kitty and duck join the fun!"
+    }
+  ],
+  "sfx": [
+    "clap",
+    "ding"
+  ]
+}

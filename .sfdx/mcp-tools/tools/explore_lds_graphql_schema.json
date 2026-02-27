@@ -1,0 +1,9 @@
+{
+  "name": "explore_lds_graphql_schema",
+  "description": "Use this tool to explore and understand the static GraphQL schema structure available in Salesforce Lightning Data Service (LDS).",
+  "inputSchema": {
+    "type": "object",
+    "properties": {},
+    "$schema": "http://json-schema.org/draft-07/schema#"
+  }
+}

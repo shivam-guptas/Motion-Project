@@ -1,0 +1,10 @@
+{
+  "theme": "animals",
+  "age": "2-5",
+  "durationSec": 60,
+  "complexity": "med",
+  "styleProfile": {
+    "bpm": 106,
+    "scenePacingSec": 3
+  }
+}

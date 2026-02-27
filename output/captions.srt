@@ -1,0 +1,80 @@
+1
+00:00:00,000 --> 00:00:03,000
+bunny bounce, bunny bounce!
+
+2
+00:00:03,000 --> 00:00:06,000
+red and blue, sing and clap!
+
+3
+00:00:06,000 --> 00:00:09,000
+Little puppy goes hop_right in the sun,
+
+4
+00:00:09,000 --> 00:00:12,000
+kitty and duck join the fun!
+
+5
+00:00:12,000 --> 00:00:15,000
+bunny bounce, bunny bounce!
+
+6
+00:00:15,000 --> 00:00:18,000
+red and blue, sing and clap!
+
+7
+00:00:18,000 --> 00:00:21,000
+Little puppy goes hop_right in the sun,
+
+8
+00:00:21,000 --> 00:00:24,000
+kitty and duck join the fun!
+
+9
+00:00:24,000 --> 00:00:27,000
+bunny bounce, bunny bounce!
+
+10
+00:00:27,000 --> 00:00:30,000
+red and blue, sing and clap!
+
+11
+00:00:30,000 --> 00:00:33,000
+Little puppy goes hop_right in the sun,
+
+12
+00:00:33,000 --> 00:00:36,000
+kitty and duck join the fun!
+
+13
+00:00:36,000 --> 00:00:39,000
+bunny bounce, bunny bounce!
+
+14
+00:00:39,000 --> 00:00:42,000
+red and blue, sing and clap!
+
+15
+00:00:42,000 --> 00:00:45,000
+Little puppy goes hop_right in the sun,
+
+16
+00:00:45,000 --> 00:00:48,000
+kitty and duck join the fun!
+
+17
+00:00:48,000 --> 00:00:51,000
+bunny bounce, bunny bounce!
+
+18
+00:00:51,000 --> 00:00:54,000
+red and blue, sing and clap!
+
+19
+00:00:54,000 --> 00:00:57,000
+Little puppy goes hop_right in the sun,
+
+20
+00:00:57,000 --> 00:01:00,000
+kitty and duck join the fun!
+

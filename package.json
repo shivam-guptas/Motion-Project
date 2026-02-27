@@ -6,6 +6,10 @@
   "scripts": {
     "dev": "node scripts/dev-server.js",
     "build": "node scripts/build.js",
-    "preview": "node scripts/preview.js"
+    "preview": "node scripts/preview.js",
+    "generate:storyboard": "node scripts/generate-storyboard.js",
+    "generate:audio": "node scripts/generate-audio.js",
+    "render:video": "node scripts/render-storyboard-video.js",
+    "assemble:mp4": "node scripts/assemble-final.js"
   }
 }

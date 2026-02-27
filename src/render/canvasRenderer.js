@@ -24,7 +24,7 @@ export class CanvasRenderer {
 
   render(scene, particles, elapsed) {
     const themeKey = scene.name.toLowerCase();
-    const pal = palettes[themeKey];
+    const pal = palettes[themeKey] || palettes.candyland;
     const grad = this.ctx.createLinearGradient(0, 0, 0, this.height);
     grad.addColorStop(0, pal.backgroundTop);
     grad.addColorStop(1, pal.backgroundBottom);
