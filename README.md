@@ -12,6 +12,17 @@ npm run build
 
 Then open http://localhost:5173.
 
+## Storyboard MVP foundation
+
+- Added a schema-style validator for storyboard JSON (`src/storyboard/storyboardSchema.js`).
+- Added a sample storyboard contract (`src/storyboard/sampleStoryboard.js`).
+- Added a canvas storyboard renderer with a small action library (`src/storyboard/storyboardRenderer.js`).
+- Added npm checks/helpers:
+  - `npm run validate:storyboard`
+  - `npm run mux:video` (requires local `ffmpeg`)
+
+In the app HUD, switch **Mode** to **Storyboard demo** to preview the storyboard pipeline in-canvas.
+
 ## How scenes work
 
 - Every scene uses a seeded RNG (`mulberry32`) so each generated setup is unique but controlled.
